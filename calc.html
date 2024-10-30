@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="icon" href="../calculate_FILL0_wght600_GRAD200_opsz48.png">
+    <style>
+        #display {
+            background-color:gray ;
+            color: white;
+            margin:7px;
+            margin-bottom: 20px;
+            padding: 25px;
+            font: 25pt Verdana;
+            width: 280px;
+            text-align: end;
+            padding-left: 5px;
+            border-radius: 10px;
+            height: 40px;
+        }
+        #c, #ponto {
+            width: 153px;
+            height: 60px;
+        }
+        #divisao {
+            width: 75px;
+            height: 60px;
+        }
+        #multiplicacao {
+            width: 75px;
+            height: 60px;
+        }
+        #linha1, #linha2, #linha3, #linha4, #linha5, #linha6 {
+            margin:5px;
+            
+        }
+        #sete, #oito, #nove, #subtracao, #quatro, #cinco, #seis, #soma, #um, #dois, #tres, #igual, #zero {
+            width: 75px;
+            height: 60px;
+        }
+        #calculadora {
+            background-color: pink;
+            padding: 25px;
+            width: 325px;
+            border-radius: 20px;
+        }
+        #igual {
+            height: 125px;
+        }
+        #iguall {
+            position: relative;
+            width: 75px;
+            margin-left: 237px;
+            margin-top:-60px;
+        }
+        #linha6 {
+            margin-top: -65px;
+        }
+        button {
+            font:20pt Verdana;
+            border: none;
+            color:rgb(187, 75, 135);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(236, 156, 198);
+            color:rgb(255, 255, 255);
+            transition: .2s;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="calculadora">
+        <div id="display">
+        
+    </div>
+        <div id="linha1">
+            <button id="c" onclick="erase()">C</button>
+        <button id="divisao" onclick="insert('/')">÷</button>
+        <button id="multiplicacao"onclick="insert('*')" >x</button>
+        </div>
+        <div id="linha2">
+        <button value="7" id="sete" onclick="insert('7')">7</button>
+        <button value="8" id="oito" onclick="insert('8')">8</button>
+        <button value="9" id="nove" onclick="insert('9')">9</button>
+        <button id="subtracao" onclick="insert('-')">-</button>
+        </div>
+        <div id="linha3">
+        <button value="4" id="quatro" onclick="insert('4')">4</button>
+        <button value="5" id="cinco" onclick="insert('5')">5</button>
+        <button value="6" id="seis" onclick="insert('6')">6</button>
+        <button id="soma" onclick="insert('+')">+</button>
+        </div id="linha4">
+        <div id="linha5">
+        <button value="1" id="um" onclick="insert('1')">1</button>
+        <button value="2" id="dois" onclick="insert('2')">2</button>
+        <button value="3" id="tres" onclick="insert('3')">3</button>
+        <div id="iguall">
+            <button id="igual" onclick="calcular()">=</button>
+        </div>
+        </div>
+        
+        <div id="linha6">
+            <button id="zero" onclick="insert('0')">0</button>
+            <button id="ponto" onclick="insert('.')">.</button>
+        </div>
+    </div>
+
+    <script>
+    function insert(num) {
+        var numero = document.getElementById('display').innerText;
+            document.getElementById('display').innerText = numero + num;
+        }
+        function erase () {
+            document.getElementById('display').innerText = "";
+        }
+
+        function calcular () {
+        var resultado = document.getElementById('display').innerHTML
+        if(resultado)
+        {
+            document.getElementById('display').innerHTML = eval(resultado);
+        }
+        else
+        {
+        
+        document.getElementById('display').innerHTML = "";
+        }
+        
+        }
+        
+    </script>
+</body>
+</html>
